@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 17px;
+    font-family: 'Handlee', cursive;
+    background:rgba(39,135,245, 0.2);
+}

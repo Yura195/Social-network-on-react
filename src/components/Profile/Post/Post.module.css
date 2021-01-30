@@ -1,0 +1,6 @@
+.point {
+    background: rgb(13, 13, 58);
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+}

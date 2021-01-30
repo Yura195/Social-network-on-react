@@ -1,0 +1,34 @@
+.posts {
+    margin: 20px 0 0 40px;
+}
+
+.btn {
+    margin: 10px 0 0 auto;
+    display: block;
+    background: rgb(126, 126, 206);
+    border: none;
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+    color: rgb(255, 251, 251);
+    border-radius: 25px;
+}
+
+.btn:hover {
+    background: rgb(128, 128, 250);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.textarea {
+    padding: 10px 0 0 10px;
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+
+.textarea:focus {
+    outline: none;
+}
