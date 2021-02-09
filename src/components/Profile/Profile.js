@@ -1,6 +1,7 @@
+import styles from "./Profile.module.css"
+
 import AddPost from "./AddPost/AddPost"
 import Post from "./Post/Post"
-import styles from "./Profile.module.css"
 import UserInfo from "./UserInfo/UserInfo"
 
 const Profile = () => {
@@ -8,7 +9,8 @@ const Profile = () => {
     <div className={styles.profile}>
       <UserInfo />
       <AddPost />
-      <Post />
+      <Post message="Hi"/>
+      <Post message="How are you?"/>
     </div>
   )
 }

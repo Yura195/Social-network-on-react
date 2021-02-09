@@ -1,11 +1,9 @@
 import styles from "./Post.module.css"
-const Post = () => {
+const Post = (props) => {
   return (
     <div className={styles.post}>
       <div className={styles.point}></div>
-      <div className={styles.text}>Hi</div>
-      <div className={styles.point}></div>
-      <div className={styles.text}>How are you?</div>
+      <div className={styles.text}>{props.message}</div>
     </div>
   )
 }
