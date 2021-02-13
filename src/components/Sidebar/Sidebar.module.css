@@ -1,7 +1,7 @@
 .nav {
     width: 8%;
-    height: 40%;
-    padding: 40px 0 0 10px;
+    height: 200px;
+    padding: 20px 0 0 10px;
     border-right: 4px dotted rgba(180, 180, 255, 0.664);
     border-bottom: 4px dotted rgba(180, 180, 255, 0.664);
 }
@@ -30,4 +30,15 @@
 }
 .link:hover:after {
     width: 100%;
+}
+
+.active:after{
+    display: block;
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color:black;
+    top:80%;
+    left:0;
 }

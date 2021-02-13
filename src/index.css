@@ -5,6 +5,7 @@
 }
 
 body {
+    overflow:auto;
     font-size: 17px;
     font-family: 'Handlee', cursive;
     background:rgba(39,135,245, 0.2);
