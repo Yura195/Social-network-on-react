@@ -1,9 +1,9 @@
 import styles from './Message.module.css';
 
-const Message = () => {
+const Message = (props) => {
     return (
-        <div>
-            Hi
+        <div className={styles.message}>
+            {props.message}
         </div>
     )
 }

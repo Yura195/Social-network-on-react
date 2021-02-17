@@ -1,11 +1,11 @@
 import Content from "./components/Content/Content"
 import Header from "./components/Header/Header"
 
-const App = () => {
+const App = (props) => {
   return(
     <div>
       <Header />
-      <Content/>
+      <Content sidebar={props.state.sidebar} profilePage={props.state.profilePage}/>
     </div>
   )
 }
