@@ -1,3 +1,5 @@
+let rerender = () => {};
+
 let state = {
   sidebar: [
     { path: "/profile", link: "Profile", id: 1 },
@@ -17,11 +19,31 @@ let state = {
     ],
   },
   profilePage: {
-      posts: [
-        {id:1,text:"Hello everyone"},
-        {id:2,text:"I am new at this"}
-      ]
-  }
+    posts: [
+      { id: 1, text: "Hello everyone" },
+      { id: 2, text: "I am new at this" },
+    ],
+    newPostText: "Hi",
+  },
+};
+
+export const addPost = () => {
+  let newPost = {
+    id: 3,
+    text: state.profilePage.newPostText,
+  };
+  state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText = "";
+  rerender(state);
+};
+
+export const updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerender(state);
+};
+
+export const subscribe = (observer) => {
+  rerender = observer;
 };
 
 export default state;

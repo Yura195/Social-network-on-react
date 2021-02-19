@@ -5,7 +5,7 @@ const App = (props) => {
   return(
     <div>
       <Header />
-      <Content sidebar={props.state.sidebar} profilePage={props.state.profilePage}/>
+      <Content state={props.state} addPost={props.addPost}  updateNewPostText={props.updateNewPostText}/>
     </div>
   )
 }

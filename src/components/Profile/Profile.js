@@ -1,18 +1,24 @@
-import styles from "./Profile.module.css"
+import styles from "./Profile.module.css";
 
-import AddPost from "./AddPost/AddPost"
-import Post from "./Post/Post"
-import UserInfo from "./UserInfo/UserInfo"
+import AddPost from "./AddPost/AddPost";
+import Post from "./Post/Post";
+import UserInfo from "./UserInfo/UserInfo";
 
-const Profile = () => {
+const Profile = (props) => {
+  let posts = props.profilePage.posts.map((post,index) => (
+    <Post key={index} message={post.text} />
+  ));
   return (
     <div className={styles.profile}>
       <UserInfo />
-      <AddPost />
-      <Post message="Hi"/>
-      <Post message="How are you?"/>
+      <AddPost
+        addPost={props.addPost}
+        updateNewPostText={props.updateNewPostText}
+        newPostText={props.profilePage.newPostText}
+      />
+      {posts}
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

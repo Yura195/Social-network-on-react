@@ -1,22 +1,13 @@
-import styles from './Messenger.module.css';
+import styles from "./Messenger.module.css";
 
-import Message from './Message/Message';
+import Message from "./Message/Message";
 
-const Messenger = () => {
-  let messagesData = [
-    { id: 1, text: "Hi" },
-    { id: 2, text: "How are you?" },
-  ];
-
-  let message = messagesData.map((messagesItem) => (
-    <Message message={messagesItem.text} key={messagesItem.id} />
+const Messenger = (props) => {
+  let messages = props.messages.map((message,index) => (
+    <Message message={message.text} key={index} />
   ));
-  
-return (
-    <div className={styles.messenger}>
-      {message}
-    </div>
-)
-}
+
+  return <div className={styles.messenger}>{messages}</div>;
+};
 
 export default Messenger;

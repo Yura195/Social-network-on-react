@@ -2,17 +2,12 @@ import styles from "./Dialog.module.css";
 
 import DialogItem from "./DialogItem/DialogItem";
 
-const Dialog = () => {
-  let dialogData = [
-    { id: 1, name: "Oleg" },
-    { id: 2, name: "Max" },
-  ];
-
-  let dialogItem = dialogData.map((dialog) => (
-    <DialogItem name={dialog.name} id={dialog.id} />
+const Dialog = (props) => {
+  let dialogs = props.dialogs.map((dialog,index) => (
+    <DialogItem name={dialog.name} id={dialog.id} key={index} />
   ));
 
-  return <div className={styles.dialog}>{dialogItem}</div>;
+  return <div className={styles.dialog}>{dialogs}</div>;
 };
 
 export default Dialog;
