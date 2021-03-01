@@ -1,11 +1,10 @@
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
-import state, { subscribe } from "./store/state";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { addPost, updateNewPostText } from "./store/state";
 import { BrowserRouter } from "react-router-dom";
+import store from "./store/state";
 
 let rerender = (state) => {
   ReactDOM.render(
@@ -13,15 +12,14 @@ let rerender = (state) => {
       <React.StrictMode>
         <App 
         state={state} 
-        addPost={addPost}
-        updateNewPostText={updateNewPostText}
-        />
+        dispatch={store.dispatch.bind(store)} />
       </React.StrictMode>
-      </BrowserRouter>, document.getElementById('root')
+    </BrowserRouter>,
+    document.getElementById("root")
   );
-}
+};
 
-rerender(state);
-subscribe(rerender);
+rerender(store.getState());
+store.subscribe(rerender);
 
 reportWebVitals();
