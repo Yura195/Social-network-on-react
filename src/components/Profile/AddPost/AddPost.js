@@ -7,7 +7,6 @@ import {
 } from "../../../store/state";
 
 const AddPost = (props) => {
-console.log(props)
   let newPostElement = React.createRef();
   
   let addPost = () => {
