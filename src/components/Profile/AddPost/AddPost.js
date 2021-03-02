@@ -1,14 +1,13 @@
 import styles from "./AddPost.module.css";
 import React from "react";
-
 import {
   addPostCreator,
   updateNewPostTextCreator,
-} from "../../../store/state";
+} from "../../../redux/profile-reducer";
 
 const AddPost = (props) => {
   let newPostElement = React.createRef();
-  
+
   let addPost = () => {
     props.dispatch(addPostCreator());
   };

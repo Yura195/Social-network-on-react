@@ -1,9 +1,8 @@
 import styles from "./AddMessage.module.css";
-
 import {
   addMessageCreator,
   updateNewMessageTextCreator,
-} from "../../../../store/state";
+} from "../../../../redux/dialogs-reducer";
 
 const AddMessage = (props) => {
   let addMessage = () => {
