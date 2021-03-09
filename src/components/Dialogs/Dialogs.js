@@ -6,11 +6,10 @@ import Messenger from "./Messenger/Messenger";
 const Dialogs = (props) => {
   return (
     <div className={styles.dialogs}>
-      <Dialog dialogs={props.dialogsPage.dialogs} />
+      <Dialog state={props.state} />
       <Messenger
-        dispatch={props.dispatch}
-        messages={props.dialogsPage.messages}
-        newMessageText={props.dialogsPage.newMessageText}
+        store={props.store}
+        state={props.state}
       />
     </div>
   );

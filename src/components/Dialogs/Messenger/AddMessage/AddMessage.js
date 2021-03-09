@@ -1,17 +1,13 @@
 import styles from "./AddMessage.module.css";
-import {
-  addMessageCreator,
-  updateNewMessageTextCreator,
-} from "../../../../redux/dialogs-reducer";
 
 const AddMessage = (props) => {
-  let addMessage = () => {
-    props.dispatch(addMessageCreator());
+  let onAddMessage = () => {
+    props.addMessage();
   };
 
   let onMessageChange = (e) => {
     let text = e.target.value;
-    props.dispatch(updateNewMessageTextCreator(text));
+    props.updateNewMessageText(text);
   };
 
   return (
@@ -22,7 +18,7 @@ const AddMessage = (props) => {
         onChange={onMessageChange}
         value={props.newMessageText}
       ></textarea>
-      <button className={styles.btn} onClick={addMessage}>
+      <button className={styles.btn} onClick={onAddMessage}>
         Add new message
       </button>
     </div>

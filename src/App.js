@@ -6,6 +6,7 @@ const App = (props) => {
     <div>
       <Header />
       <Content
+        store={props.store}
         state={props.state}
         dispatch={props.dispatch}
       />
