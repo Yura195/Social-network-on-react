@@ -7,8 +7,6 @@ const App = (props) => {
       <Header />
       <Content
         store={props.store}
-        state={props.state}
-        dispatch={props.dispatch}
       />
     </div>
   );

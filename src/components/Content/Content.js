@@ -9,20 +9,17 @@ import Dialogs from "../Dialogs/Dialogs";
 const Content = (props) => {
   return (
     <div className={styles.content}>
-      <Sidebar sidebar={props.state.sidebar} />
+      <Sidebar sidebar={props.store.getState().sidebar} />
       <Route
         path="/profile"
         render={() => (
-          <Profile state={props.state} store={props.store}></Profile>
+          <Profile store={props.store}></Profile>
         )}
       />
       <Route
         path="/messages"
         render={() => (
-          <Dialogs
-            state={props.state}
-            store={props.store}
-          ></Dialogs>
+          <Dialogs store={props.store}></Dialogs>
         )}
       />
     </div>

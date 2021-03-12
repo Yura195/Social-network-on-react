@@ -5,7 +5,7 @@ import {
 } from "../../../redux/profile-reducer";
 
 const AddPostContainer = (props) => {
-  let state = props.store.getState();
+  let state = props.store.getState().profilePage;
 
   let onAddPost = () => {
     props.store.dispatch(addPostCreator());
@@ -19,7 +19,8 @@ const AddPostContainer = (props) => {
     <AddPost
       updateNewPostText={onPostChange}
       addPost={onAddPost}
-      newPostText={state.profilePage.newPostText}
+      newPostText={state.newPostText}
+      posts={state.posts}
     />
   );
 };

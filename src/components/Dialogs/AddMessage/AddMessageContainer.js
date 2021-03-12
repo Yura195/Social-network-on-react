@@ -2,10 +2,11 @@ import AddMessage from "./AddMessage";
 import {
   addMessageCreator,
   updateNewMessageTextCreator,
-} from "../../../../redux/dialogs-reducer";
+} from "../../../redux/dialogs-reducer";
 
 const AddMessageContainer = (props) => {
   let state = props.store.getState().dialogsPage;
+  
   let onAddMessage = () => {
     props.store.dispatch(addMessageCreator());
   };
@@ -19,6 +20,8 @@ const AddMessageContainer = (props) => {
       addMessage={onAddMessage}
       updateNewMessageText={onMessageChange}
       newMessageText={state.newMessageText}
+      dialogs = {state.dialogs}
+      messages = {state.messages}
     />
   );
 };

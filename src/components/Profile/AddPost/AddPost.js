@@ -1,16 +1,19 @@
 import styles from "./AddPost.module.css";
 import React from "react";
 
+import Post from "../Post/Post";
 
 const AddPost = (props) => {
-  let newPostElement = React.createRef();
+  let posts = props.posts.map((post, index) => (
+    <Post key={index} message={post.text} />
+  ));
 
   let onAddPost = () => {
     props.addPost();
   };
 
-  let onPostChange = () => {
-    let text = newPostElement.current.value;
+  let onPostChange = (e) => {
+    let text = e.target.value;
     props.updateNewPostText(text);
   };
 
@@ -18,7 +21,6 @@ const AddPost = (props) => {
     <div className={styles.posts}>
       <textarea
         onChange={onPostChange}
-        ref={newPostElement}
         className={styles.textarea}
         placeholder="Write some text"
         value={props.newPostText}
@@ -26,6 +28,7 @@ const AddPost = (props) => {
       <button className={styles.btn} onClick={onAddPost}>
         Add new post
       </button>
+      {posts}
     </div>
   );
 };
