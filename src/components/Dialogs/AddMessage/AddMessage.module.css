@@ -9,6 +9,10 @@
   resize: none;
 }
 
+.textarea:focus {
+  outline: none;
+}
+
 .btn {
   margin: 10px 0 0 auto;
   display: block;

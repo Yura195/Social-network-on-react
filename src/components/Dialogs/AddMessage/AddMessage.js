@@ -4,11 +4,11 @@ import DialogsItem from "../DialogsItem/DialogsItem";
 import MessageItem from "../MessageItem/MessageItem";
 
 const AddMessage = (props) => {
-  let dialogsItems = props.dialogs.map((dialogItem, index) => (
+  let dialogsItems = props.dialogsPage.dialogs.map((dialogItem, index) => (
     <DialogsItem to={dialogItem.id} key={index} name={dialogItem.name} />
   ));
 
-  let messagesItems = props.messages.map((messageItem, index) => (
+  let messagesItems = props.dialogsPage.messages.map((messageItem, index) => (
     <MessageItem key={index} message={messageItem.text} />
   ));
 
@@ -31,7 +31,7 @@ const AddMessage = (props) => {
           placeholder="Enter your message"
           onChange={onMessageChange}
           value={props.newMessageText}
-        ></textarea>
+        />
         <button className={styles.btn} onClick={onAddMessage}>
           Add new message
         </button>

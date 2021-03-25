@@ -4,7 +4,7 @@ import React from "react";
 import Post from "../Post/Post";
 
 const AddPost = (props) => {
-  let posts = props.posts.map((post, index) => (
+  let posts = props.profilePage.posts.map((post, index) => (
     <Post key={index} message={post.text} />
   ));
 

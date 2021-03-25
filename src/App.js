@@ -1,13 +1,11 @@
 import Content from "./components/Content/Content";
 import Header from "./components/Header/Header";
 
-const App = (props) => {
+const App = () => {
   return (
     <div>
       <Header />
-      <Content
-        store={props.store}
-      />
+      <Content/>
     </div>
   );
 };
