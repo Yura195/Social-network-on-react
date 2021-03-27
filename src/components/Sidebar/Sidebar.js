@@ -8,7 +8,8 @@ const Sidebar = () => {
     { path: "/messages", link: "Messages", id: 2 },
     { path: "/news", link: "News", id: 3 },
     { path: "/music", link: "Music", id: 4 },
-    { path: "/settings", link: "Settings", id: 5 },
+    { path: "/users", link: "Find users", id: 5},
+    { path: "/settings", link: "Settings", id: 6 },
   ];
 
   let sidebarItems = sidebar.map((sidebarItem) => (
