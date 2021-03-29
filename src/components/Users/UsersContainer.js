@@ -3,9 +3,9 @@ import {
   followCreator,
   setUsersCreator,
   unfollowCreator,
-} from "../../../redux/users-reducer";
+} from "../../redux/users-reducer";
 
-import UsersItem from "./UsersItem";
+import Users from "./Users";
 
 let mapStateToProps = (state) => {
   return {
@@ -29,4 +29,4 @@ let mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersItem);
+export default connect(mapStateToProps, mapDispatchToProps)(Users);
