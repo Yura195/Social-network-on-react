@@ -6,8 +6,8 @@ import AddPostContainer from "./AddPost/AddPostContainer";
 const Profile = (props) => {
   return (
     <div className={styles.profile}>
-      <UserInfo />
-      <AddPostContainer store={props.store} />
+      <UserInfo profile={props.profile}/>
+      <AddPostContainer />
     </div>
   );
 };

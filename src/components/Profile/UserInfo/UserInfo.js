@@ -1,11 +1,15 @@
 import styles from './UserInfo.module.css';
-import photo from '../../../img/photo.jpg'
+import Preloader from '../../../common/Preloader/Preloader';
 
-const UserInfo = () => {
+const UserInfo = (props) => {
+    if(!props.profile) {
+        return <Preloader/>
+    }
+    
     return (
         <div className = {styles.user}>
             <div className = {styles.photo}>
-                <img src={photo} alt="user" />
+                <img src={props.profile.photos.large} alt="user" />
             </div>
             <div className= {styles.info}>
                 <div className={styles.row}>Aleksei M.</div>
