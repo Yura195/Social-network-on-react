@@ -3,12 +3,14 @@ const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET_USERS";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT";
+const PRELOADING = "PRELOADING";
 
 let initialState = {
   users: [],
   pageSize: 5,
   totalUsersCount: 0,
   currentPage: 1,
+  isLoading: true,
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -61,43 +63,57 @@ const usersReducer = (state = initialState, action) => {
       };
     }
 
+    case PRELOADING: {
+      return {
+        ...state,
+        isLoading: action.isLoading,
+      };
+    }
+
     default:
       return state;
   }
 };
 
-export const followCreator = (userId) => {
+export const follow = (userId) => {
   return {
     type: FOLLOW,
     userId,
   };
 };
 
-export const unfollowCreator = (userId) => {
+export const unfollow = (userId) => {
   return {
     type: UNFOLLOW,
     userId,
   };
 };
 
-export const setUsersCreator = (users) => {
+export const setUsers = (users) => {
   return {
     type: SET_USERS,
     users,
   };
 };
 
-export const setCurrentPageCreator = (currentPage) => {
+export const setCurrentPage = (currentPage) => {
   return {
     type: SET_CURRENT_PAGE,
     currentPage,
   };
 };
 
-export const setTotalUsersCountCreator = (totalUsersCount) => {
+export const setTotalUsersCount = (totalUsersCount) => {
   return {
     type: SET_TOTAL_USERS_COUNT,
     totalUsersCount,
+  };
+};
+
+export const preloading = (isLoading) => {
+  return {
+    type: PRELOADING,
+    isLoading,
   };
 };
 

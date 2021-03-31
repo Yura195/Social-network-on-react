@@ -10,3 +10,8 @@ body {
     font-family: 'Handlee', cursive;
     background:rgba(39,135,245, 0.2);
 }
+
+.preloader {
+    height: 50px;
+    width: 50px;
+}
