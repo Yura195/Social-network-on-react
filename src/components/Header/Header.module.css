@@ -6,9 +6,15 @@
     padding-left:25px;
     width: 1200px;
     margin: 0 auto;
+    justify-content: space-between;
 }
 
 .logo{
     width: 30px;
     height: 30px;
+}
+
+.login a {
+    color:black;
+    margin-right: 30px;
 }

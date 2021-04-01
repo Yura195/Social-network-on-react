@@ -1,10 +1,10 @@
 import Content from "./components/Content/Content";
-import Header from "./components/Header/Header";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 const App = () => {
   return (
     <div>
-      <Header />
+      <HeaderContainer />
       <Content/>
     </div>
   );
