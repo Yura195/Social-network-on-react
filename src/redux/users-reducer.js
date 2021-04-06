@@ -4,6 +4,7 @@ const SET_USERS = "SET_USERS";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT";
 const PRELOADING = "PRELOADING";
+const DISABLED_IN_FOLLOWING_PROGRESS = "DISABLED_IN_FOLLOWING_PROGRESS";
 
 let initialState = {
   users: [],
@@ -11,6 +12,7 @@ let initialState = {
   totalUsersCount: 0,
   currentPage: 1,
   isLoading: true,
+  followingInProgress: [],
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -70,6 +72,15 @@ const usersReducer = (state = initialState, action) => {
       };
     }
 
+    case DISABLED_IN_FOLLOWING_PROGRESS: {
+      return {
+        ...state,
+        followingInProgress: action.isLoading
+          ? [...state.followingInProgress, action.userId]
+          : [state.followingInProgress.filter((id) => id !== action.userId)],
+      };
+    }
+
     default:
       return state;
   }
@@ -117,4 +128,11 @@ export const preloading = (isLoading) => {
   };
 };
 
+export const disabledInFollowingProgress = (isLoading, userId) => {
+  return {
+    type: DISABLED_IN_FOLLOWING_PROGRESS,
+    isLoading,
+    userId,
+  };
+};
 export default usersReducer;
